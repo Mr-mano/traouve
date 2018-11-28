@@ -1,51 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Traobject index{% endblock %}
+{% block title %}Objet{% endblock %}
 
 {% block body %}
-    <h1>Traobject index</h1>
+<main class="main-content">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Picture</th>
-                <th>Description</th>
-                <th>EventAt</th>
-                <th>DateEnd</th>
-                <th>City</th>
-                <th>Address</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for traobject in traobjects %}
-            <tr>
-                <td>{{ traobject.id }}</td>
-                <td>{{ traobject.title }}</td>
-                <td>{{ traobject.picture }}</td>
-                <td>{{ traobject.description }}</td>
-                <td>{{ traobject.eventAt ? traobject.eventAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ traobject.dateEnd ? traobject.dateEnd|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ traobject.city }}</td>
-                <td>{{ traobject.address }}</td>
-                <td>{{ traobject.createdAt ? traobject.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ traobject.updatedAt ? traobject.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('traobject_show', {'id': traobject.id}) }}">show</a>
-                    <a href="{{ path('traobject_edit', {'id': traobject.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="card object-card">
+            <h1 class="card-header">
+                <span class="badge badge-primary badge-found">
+                    <i class="fa fa-map-pin"></i>
+                    Trouvé
+                </span>
+                Portefeuille retrouvé à l'arrêt de bus
+            </h1>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="uploads/wallet.jpg" class="img-thumbnail" alt="Portefeuille">
+                    </div>
+                    <div class="col-md-8">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto cum ducimus eaque eligendi et laudantium nostrum porro possimus, provident quam quibusdam recusandae rem similique unde? Laboriosam officiis suscipit vero.</p>
+                    </div>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <ul class="object-features">
+                    <li><a href="#" class="badge" style="background-color: #dc143c;"><i class="fa fa-money"></i> Portefeuille</a></li>
+                    <li><a href="#" class="badge badge-info"><i class="fa fa-calendar"></i> 21/11/2018</a></li>
+                    <li><a href="#" class="badge badge-info"><i class="fa fa-map-marker"></i> Rennes</a></li>
+                </ul>
+            </footer>
+        </div>
 
-    <a href="{{ path('traobject_new') }}">Create new</a>
-{% endblock %}
+        <hr>
+
+        <h3>Commentaires</h3>
+
+        <div class="alert alert-secondary" role="alert">
+            <p>Veuillez vous connecter afin de pouvoir laisser un commentaire</p>
+            <a href="login.html" class="btn btn-primary">
+                <i class="fa fa-sign-in"></i>
+                Me connecter
+            </a>
+        </div>
+
+        <ul class="list-unstyled">
+            <li class="media mb-1">
+                <img class="mr-3" src="uploads/user-2.jpg" alt="Generic placeholder image">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">Jane Doe</h5>
+                    <p>Pourriez-vous préciser l'heure à laquelle vous l'avez perdu svp ? Il me semble avoir vu une personne le ramasser vers 17h30.</p>
+                </div>
+            </li>
+            <li class="media mb-1">
+                <img class="mr-3" src="uploads/user-1.jpg" alt="John Doe">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">John Doe</h5>
+                    <p>Bonjour, je pense avoir trouvé votre portefeuille ce matin. Pourriez-vous m'envoyer votre nom et prénom par message privé svp afin que je puisse vous le remettre ?</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</main>
+
+<div class="container">
+    {% endblock %}

@@ -14,9 +14,9 @@ class TraobjectFixtures extends Fixture implements DependentFixtureInterface
 
         $peluche = new Traobject();
         $peluche->setTitle("peluche");
-        $peluche->setPicture("abcd.jpeg");
-        $peluche->setDescription("ours blanc");
-        $peluche->setEventAt(new \DateTime("2018-10-22"));
+        $peluche->setPicture("teddy-bear.jpg");
+        $peluche->setDescription("ours blanc avec une cape rose");
+        $peluche->setEventAt(new \DateTime("2018-09-05"));
         $peluche->setDateEnd(null);
         $peluche->setCity("Rennes");
         $peluche->setAddress("12 rue du Pilon");
@@ -29,11 +29,11 @@ class TraobjectFixtures extends Fixture implements DependentFixtureInterface
 
         $clef = new Traobject();
         $clef->setTitle("clefs de voiture");
-        $clef->setPicture("abcd.jpeg");
-        $clef->setDescription("clef Audi");
-        $clef->setEventAt(new \DateTime("2018-10-22"));
+        $clef->setPicture("keys.jpg");
+        $clef->setDescription("clef Audi avec un porte clef bleu");
+        $clef->setEventAt(new \DateTime("2018-09-28"));
         $clef->setDateEnd(null);
-        $clef->setCity("Brest");
+        $clef->setCity("Quimper");
         $clef->setAddress("5 rout du port");
         $clef->setCategory($this->getReference("category-clef"));
         $clef->setState($this->getReference("state-perdu"));
@@ -44,8 +44,8 @@ class TraobjectFixtures extends Fixture implements DependentFixtureInterface
 
         $ourson = new Traobject();
         $ourson->setTitle("doudou ourson");
-        $ourson->setPicture("abcd.jpeg");
-        $ourson->setDescription("ourson bleu ciel");
+        $ourson->setPicture("teddy-bear.jpg");
+        $ourson->setDescription("ourson bleu ciel avec des yeux jaunes");
         $ourson->setEventAt(new \DateTime("2018-10-22"));
         $ourson->setDateEnd(new \DateTime("2018-10-30"));
         $ourson->setCity("Morlaix");
@@ -59,7 +59,7 @@ class TraobjectFixtures extends Fixture implements DependentFixtureInterface
 
         $portefeuille = new Traobject();
         $portefeuille->setTitle("porte feuille");
-        $portefeuille->setPicture("abcd.jpeg");
+        $portefeuille->setPicture("wallet.jpg");
         $portefeuille->setDescription("porte feuille en cuir marron");
         $portefeuille->setEventAt(new \DateTime("2018-11-13"));
         $portefeuille->setDateEnd(new \DateTime("2018-11-25"));

@@ -90,4 +90,30 @@ class TraobjectController extends AbstractController
 
         return $this->redirectToRoute('traobject_index');
     }
+
+
+    /**
+     * @Route("/lost", name="traobject_lost", methods="GET|POST")
+     */
+    public function newlost(Request $request): Response
+    {
+        $traobject = new Traobject();
+        $form = $this->createForm(TraobjectType::class, $traobject);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($traobject);
+            $em->flush();
+
+            return $this->redirectToRoute('traobject_lost');
+        }
+
+        return $this->render('traobject/lost.html.twig', [
+            'traobject' => $traobject,
+            'form' => $form->createView(),
+        ]);
+    }
+
+
 }
