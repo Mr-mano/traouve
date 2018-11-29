@@ -17,7 +17,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="uploads/wallet.jpg" class="img-thumbnail" alt="Portefeuille">
+                        <img src="{{ asset('uploads/wallet.jpg') }}" class="img-thumbnail" alt="Portefeuille">
                     </div>
                     <div class="col-md-8">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto cum ducimus eaque eligendi et laudantium nostrum porro possimus, provident quam quibusdam recusandae rem similique unde? Laboriosam officiis suscipit vero.</p>
@@ -36,25 +36,31 @@
         <hr>
 
         <h3>Commentaires</h3>
-
+        {% if app.user %}
+        <div class="alert alert-secondary" role="alert">
+            <p>Laissez un commentaire</p>
+            {% else %}
         <div class="alert alert-secondary" role="alert">
             <p>Veuillez vous connecter afin de pouvoir laisser un commentaire</p>
-            <a href="login.html" class="btn btn-primary">
+            <a href="{{ path('app_login') }}" class="btn btn-primary">
                 <i class="fa fa-sign-in"></i>
                 Me connecter
             </a>
+            {% endif %}
         </div>
+
+            </ul>
 
         <ul class="list-unstyled">
             <li class="media mb-1">
-                <img class="mr-3" src="uploads/user-2.jpg" alt="Generic placeholder image">
+                <img class="mr-3" src="{{ asset('uploads/user-2.jpg') }}" alt="Generic placeholder image">
                 <div class="media-body">
-                    <h5 class="mt-0 mb-1">Jane Doe</h5>
+                    <h5 class="mt-0 mb-1">Jane Lablonde</h5>
                     <p>Pourriez-vous préciser l'heure à laquelle vous l'avez perdu svp ? Il me semble avoir vu une personne le ramasser vers 17h30.</p>
                 </div>
             </li>
             <li class="media mb-1">
-                <img class="mr-3" src="uploads/user-1.jpg" alt="John Doe">
+                <img class="mr-3" src="{{ asset('uploads/user-1.jpg') }}" alt="John Doe">
                 <div class="media-body">
                     <h5 class="mt-0 mb-1">John Doe</h5>
                     <p>Bonjour, je pense avoir trouvé votre portefeuille ce matin. Pourriez-vous m'envoyer votre nom et prénom par message privé svp afin que je puisse vous le remettre ?</p>

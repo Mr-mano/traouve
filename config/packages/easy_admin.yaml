@@ -1,0 +1,38 @@
+easy_admin:
+  site_name: 'Administration Traobject'
+  entities:
+      Category:
+          class: App\Entity\Category
+          label: 'Catégories'
+          list:
+          title: 'Liste des catégories'
+
+      Traobject:
+          class: App\Entity\Traobject
+          label: 'Objects'
+          list:
+          title: 'Liste des Objects'
+
+      County:
+          class: App\Entity\County
+          label: 'Départements'
+          list:
+          title: 'Liste des départements'
+
+      Comment:
+          class: App\Entity\Comment
+          label: 'Commentaires'
+          list:
+          title: 'Liste des commentaires'
+
+      Message:
+          class: App\Entity\Message
+          label: 'Messages'
+          list:
+          title: 'Liste des messages'
+
+      User:
+          class: App\Entity\User
+          label: 'Utilisateurs'
+          list:
+          title: 'Liste des utilisateurs'

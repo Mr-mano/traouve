@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\State;
 use App\Entity\Traobject;
 use App\Form\TraobjectType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -49,6 +50,7 @@ class TraobjectController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/{id}", name="traobject_show", methods="GET")
      */
@@ -92,28 +94,8 @@ class TraobjectController extends AbstractController
     }
 
 
-    /**
-     * @Route("/lost", name="traobject_lost", methods="GET|POST")
-     */
-    public function newlost(Request $request): Response
-    {
-        $traobject = new Traobject();
-        $form = $this->createForm(TraobjectType::class, $traobject);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($traobject);
-            $em->flush();
 
-            return $this->redirectToRoute('traobject_lost');
-        }
-
-        return $this->render('traobject/lost.html.twig', [
-            'traobject' => $traobject,
-            'form' => $form->createView(),
-        ]);
-    }
 
 
 }
