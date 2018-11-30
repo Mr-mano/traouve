@@ -5,11 +5,11 @@
 {% block body %}
 
 
-
+    <div class="container">
         <div class="row">
             <div class="container col-sm-8 text-center">
                 <h1>Object</h1>
-                <div class="container">
+
                 <table class="table text-center">
                     <tbody>
 
@@ -17,27 +17,27 @@
                         <img src="{{ asset ( 'uploads/' ~ traobject.picture) }}" alt="{{ traobject.title }}">
 
                     <tr>
-                        <th>Titre</th>
+                        <th class="text-left">Titre</th>
                         <td>{{ traobject.title }}</td>
                     </tr>
                     <tr>
-                        <th>Description</th>
+                        <th class="text-left">Description</th>
                         <td>{{ traobject.description }}</td>
                     </tr>
                     <tr>
-                        <th>Perdu le</th>
+                        <th class="text-left">Perdu le</th>
                         <td>{{ traobject.eventAt ? traobject.eventAt|date('Y-m-d') : '' }}</td>
                     </tr>
                     <tr>
-                        <th>Retrouvé le</th>
+                        <th class="text-left">Retrouvé le</th>
                         <td>{{ traobject.dateEnd ? traobject.dateEnd|date('Y-m-d') : '' }}</td>
                     </tr>
                     <tr>
-                        <th>Adresse</th>
+                        <th class="text-left">Adresse</th>
                         <td>{{ traobject.address }}</td>
                     </tr>
                     <tr>
-                        <th>Ville</th>
+                        <th class="text-left">Ville</th>
                         <td>{{ traobject.city }}</td>
                     </tr>
 
